@@ -1,0 +1,113 @@
+HTML5 :::::::::::::::::::::::::::::::::::
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FLIP CARD</title>
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="card">
+		<div class="card-inner">
+			<div class="card-front">
+				<img src="lentes.png">
+				<h1>Ruben Esquivel</h1>
+				<p>IPN</p>
+			</div>
+			<div class="card-back">
+				<h2>Datos</h2>
+				<p>Ing. Comunicaciones y Electronica</p>
+				<a href="#"><img src="email.png"></a>
+				<a href="#"><img src="instagram.png"></a>
+				<a href="#"><img src="you.png"></a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+CSS3 :::::::::::::::::::::::::::::::::::::::::::::::::
+.card {
+	width: 250px;
+	height: 380px;
+	background-color: transparent;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+	font-family: 'Ubuntu', sans-serif;
+	perspective: 1000px;  
+}
+
+.card-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: transform 1s;
+	transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+	transform: rotateY(180deg);
+}
+
+.card-front, .card back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden; /*Para que se vea lo que esta detras*/
+	border-radius: 60px;
+}
+
+.card-front {  /*Parte delantera de la tarjeta */
+	background-color: #f35a00;
+	color: rgb(240, 240, 240);
+	border: 5px solid #2d2d2d;
+	border-radius: 13px;
+
+}
+
+.card-front img {
+	box-sizing: border-box;
+	padding: 20px;
+	width: 250px;
+	height: 250px;
+	object-fit: scale-down;
+}
+
+
+
+
+/*Parte trasera de la tarjeta*/
+.card-back {
+	position: absolute; /**/
+	width: 100%;/**/
+	height: 100%;/**/
+	border-radius: 13px;/**/
+	background-color: #2d2d2d;
+	color: white;
+	border: 5px ridge black;
+	transform: rotateY(180deg);
+}
+
+.card-back p {
+	margin: 30px;
+	text-align: justify;
+}
+
+.card-back img {
+	width: 30px;
+	margin: 6px;
+	padding: 8px;
+}
+
+/*.card-back img:hover {
+	background-color: rgb(0, 0, 0. 0.63);
+	border-radius: 50%;
+}*/
+
